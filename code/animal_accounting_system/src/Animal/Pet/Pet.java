@@ -2,10 +2,12 @@ package Animal.Pet;
 
 import Animal.Animal;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-abstract class Pet extends Animal {
-    public Pet(String name, Date dateofbirth) {
-        super(name, dateofbirth);
+public abstract class Pet extends Animal {
+    public Pet(String name, LocalDate birthdate) {
+        super(name, birthdate);
+
     }
 }

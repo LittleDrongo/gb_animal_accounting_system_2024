@@ -1,29 +1,47 @@
 package Animal;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public abstract class Animal {
     private String name;
-    private Date dateofbirth;
+    private LocalDate birthdate;
+    private String species;
 
-    public Animal(String name, Date dateofbirth) {
+    public Animal(String name, LocalDate birthdate) {
         this.name = name;
-        this.dateofbirth = dateofbirth;
+        this.birthdate = birthdate;
     }
 
     public String getName() {
         return name;
     }
 
-    public Date getDateofbirth() {
-        return dateofbirth;
+    public LocalDate getBirthdate() {
+        return birthdate;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setDateofbirth(Date dateofbirth) {
-        this.dateofbirth = dateofbirth;
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    protected void setSpecies(String species) {
+        this.species = species;
+    }
+
+    @Override
+    public String toString() {
+        return ("Животное "
+                + "вид: " + this.species + ","
+                + " кличка: " + this.name + ","
+                + " дата рождения: " +
+                + this.birthdate.getDayOfMonth() + "."
+                + this.birthdate.getMonthValue() + "."
+                + this.birthdate.getYear()
+        );
     }
 }
