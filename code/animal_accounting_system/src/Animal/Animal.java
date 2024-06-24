@@ -9,7 +9,7 @@ import java.util.Collections;
 public abstract class Animal {
     private String name;
     private LocalDate birthdate;
-    private String species;
+    private String type;
     private ArrayList<String> commands;
 
     public Animal(String name, LocalDate birthdate) {
@@ -40,8 +40,8 @@ public abstract class Animal {
         return commands;
     }
 
-    public String getSpecies() {
-        return species;
+    public String getType() {
+        return type;
     }
 
     public Age getAge() {
@@ -57,8 +57,8 @@ public abstract class Animal {
         this.birthdate = birthdate;
     }
 
-    protected void setSpecies(String species) {
-        this.species = species;
+    protected void setType(String type) {
+        this.type = type;
     }
 
     public void setCommands(String ...commands) {
@@ -72,7 +72,7 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return ("Вид: " + this.species + ","
+        return ("Вид: " + this.type + ","
                 + " кличка: " + this.name + ","
                 + " дата рождения: " +
                 + this.birthdate.getDayOfMonth() + "."

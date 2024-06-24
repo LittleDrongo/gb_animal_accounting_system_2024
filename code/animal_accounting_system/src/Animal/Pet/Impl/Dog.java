@@ -9,7 +9,7 @@ public class Dog extends Pet implements Barkable {
 
     public Dog(String name, LocalDate birthdate) {
         super(name, birthdate);
-        setSpecies("собака");
+        setType("собака");
     }
 
     @Override

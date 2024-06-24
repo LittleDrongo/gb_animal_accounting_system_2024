@@ -9,7 +9,7 @@ public class Cat extends Pet implements Meowable {
 
     public Cat(String name, LocalDate birthdate) {
         super(name, birthdate);
-        setSpecies("кошка");
+        setType("кошка");
     }
 
     @Override

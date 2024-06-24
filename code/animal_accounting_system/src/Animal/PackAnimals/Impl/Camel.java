@@ -4,13 +4,12 @@ import Animal.Interfaces.Carryable;
 import Animal.PackAnimals.PackAnimals;
 
 import java.time.LocalDate;
-import java.util.concurrent.Callable;
 
 public class Camel extends PackAnimals implements Carryable {
 
     public Camel(String name, LocalDate birthdate) {
         super(name, birthdate);
-        setSpecies("верблюд");
+        setType("верблюд");
     }
 
 

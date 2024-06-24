@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class Horse extends PackAnimals implements Carryable {
     public Horse(String name, LocalDate birthdate) {
         super(name, birthdate);
-        setSpecies("лошадь");
+        setType("лошадь");
     }
 
 

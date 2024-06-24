@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class Hamster extends Pet implements Squeakable {
     public Hamster(String name, LocalDate birthdate) {
         super(name, birthdate);
-        setSpecies("хомяк");
+        setType("хомяк");
     }
 
     @Override
