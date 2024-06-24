@@ -18,6 +18,16 @@ public abstract class Animal {
         this.birthdate = birthdate;
     }
 
+    public void giveCommand(String command) {
+
+        if (commands.contains(command)) {
+            System.out.println(this.name + " выполняет команду: " + command);
+        } else {
+            System.out.println(this.name + " не умеет выполнять команду: " + command);
+        }
+
+    }
+
     public String getName() {
         return name;
     }

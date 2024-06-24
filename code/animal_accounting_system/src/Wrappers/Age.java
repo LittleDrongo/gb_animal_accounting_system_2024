@@ -27,6 +27,7 @@ public class Age {
         return period;
     }
 
+
     @Override
     public String toString() {
         return period.getYears() + " лет, " + period.getMonths() + " месяцев, " + period.getDays() + " дней";

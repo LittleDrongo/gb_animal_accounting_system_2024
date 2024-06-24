@@ -15,11 +15,13 @@ public class Main {
         Hamster hamster = new Hamster("Химка", LocalDate.of(2023, 1, 4));
         Horse horse = new Horse("Грива", LocalDate.of(2000, 5, 5));
 
-        dog.setCommands("прыгать", "бегать", "летать");
+        dog.setCommands("прыгать", "бегать");
         System.out.println(dog.getCommands());
         dog.appendCommands("смеяться");
         System.out.println(dog.getCommands());
 
+        dog.giveCommand("бегать");
+        dog.giveCommand("летать");
 
         cat.meow();
         dog.bark();
