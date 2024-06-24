@@ -11,8 +11,8 @@ public class Main {
     public static void main(String[] args) {
 
         Cat cat = new Cat("Пушистик", LocalDate.of(1988, 10, 4));
-        Dog dog = new Dog("Тузик", LocalDate.of(2014, 1, 1));
-        Hamster hamster = new Hamster("Химка", LocalDate.of(2023, 1, 4));
+        Dog dog = new Dog("Тузик", LocalDate.of(2014, 9, 18));
+        Hamster hamster = new Hamster("Химка", LocalDate.of(2023, 7, 5));
         Horse horse = new Horse("Грива", LocalDate.of(2000, 5, 5));
 
         dog.setCommands("прыгать", "бегать");

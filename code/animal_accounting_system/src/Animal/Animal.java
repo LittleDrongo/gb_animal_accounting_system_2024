@@ -72,13 +72,14 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return ("Животное "
-                + "вид: " + this.species + ","
+        return ("Вид: " + this.species + ","
                 + " кличка: " + this.name + ","
                 + " дата рождения: " +
                 + this.birthdate.getDayOfMonth() + "."
                 + this.birthdate.getMonthValue() + "."
                 + this.birthdate.getYear()
+                + ","
+                + " возраст: " +this.getAge()
         );
     }
 

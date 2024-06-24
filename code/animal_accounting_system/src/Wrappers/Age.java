@@ -30,6 +30,6 @@ public class Age {
 
     @Override
     public String toString() {
-        return period.getYears() + " лет, " + period.getMonths() + " месяцев, " + period.getDays() + " дней";
+        return period.getYears() + " лет " + period.getMonths() + " месяцев " + period.getDays() + " дней";
     }
 }
