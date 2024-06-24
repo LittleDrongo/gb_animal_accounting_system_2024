@@ -1,9 +1,8 @@
-package Animal.Packer;
+package Animal.PackAnimals;
 
 import Animal.Animal;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 abstract public class PackAnimals extends Animal {
     public PackAnimals(String name, LocalDate birthdate) {
