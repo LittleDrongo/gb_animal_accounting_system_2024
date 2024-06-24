@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-        Repository repository = new Repository("mainRepository");
+        Repository repository = new Repository();
         Cat cat = new Cat("sunny", LocalDate.of(1988, 10, 4));
         Dog dog = new Dog("bob", LocalDate.of(2014, 9, 18));
         Hamster hamster = new Hamster("jemmy", LocalDate.of(2023, 7, 5));
@@ -30,10 +30,6 @@ public class Main {
         Files.createDirectoryAndFile("data/myfile.json");
         repository.exportToJson("data/myfile.json");
 
-        System.out.println("importing");
-        Repository rep = Repository.importFromJson("data/myfile.json");
-
-        rep.printListOfAnimals();
     }
 }
 

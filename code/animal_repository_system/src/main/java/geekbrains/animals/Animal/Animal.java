@@ -12,6 +12,10 @@ public abstract class Animal implements Serializable {
     private String type;
     private ArrayList<String> commands;
 
+    public Animal() {
+
+    }
+
     public Animal(String name, LocalDate birthdate) {
         this.name = name;
         this.commands = new ArrayList<>();

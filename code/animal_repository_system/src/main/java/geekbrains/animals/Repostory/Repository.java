@@ -12,25 +12,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Repository implements Serializable {
-    private final String repositoryName;
     private final Map <Integer, Animal> animalMap = new HashMap<>();
-    static private int counter = 0;
+    static  int counter = 0;
+
+    public void setCounter(int counter) {
+        Repository.counter = counter;
+    }
+
+    public Repository() {
+    }
 
     public static Repository importFromJson(String filePath) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());  // Регистрация модуля для поддержки Java 8 date/time
+        mapper.registerModule(new JavaTimeModule());
 
-        // Чтение из файла и десериализация JSON в объект Repository
         Repository repository = mapper.readValue(new File(filePath), Repository.class);
 
-        // Восстановление счетчика на основе текущего состояния репозитория
         counter = repository.getAnimalMap().size();
 
         return repository;
-    }
-
-    public Repository(String repositoryName) {
-        this.repositoryName = repositoryName;
     }
 
     public void addAnimal(Animal... animals) {
@@ -64,15 +64,13 @@ public class Repository implements Serializable {
         return counter;
     }
 
+
     public void exportToJson(String filePath) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());  // Регистрация модуля для поддержки Java 8 date/time
         mapper.writeValue(new File(filePath), this);
     }
 
-    public String getRepositoryName() {
-        return repositoryName;
-    }
 }
 
 
