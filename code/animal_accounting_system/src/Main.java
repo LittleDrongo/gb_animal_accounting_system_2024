@@ -1,4 +1,5 @@
 import Animal.Animal;
+import Animal.PackAnimals.Impl.Horse;
 import Animal.Pet.Impl.Cat;
 import Animal.Pet.Impl.Dog;
 import Animal.Pet.Impl.Hamster;
@@ -12,12 +13,22 @@ public class Main {
         Cat cat = new Cat("Пушистик", LocalDate.of(1988, 10, 4));
         Dog dog = new Dog("Тузик", LocalDate.of(2014, 1, 1));
         Hamster hamster = new Hamster("Химка", LocalDate.of(2023, 1, 4));
+        Horse horse = new Horse("Грива", LocalDate.of(2000, 5, 5));
+
+        dog.setCommands("прыгать", "бегать", "летать");
+        System.out.println(dog.getCommands());
+        dog.appendCommands("смеяться");
+        System.out.println(dog.getCommands());
+
 
         cat.meow();
         dog.bark();
         hamster.squeak();
+        horse.moveCargo();
 
         System.out.println(cat.getAge());
+
+
 
         System.out.println(cat);
         System.out.println(dog);
