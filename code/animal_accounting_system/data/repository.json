@@ -1,0 +1,69 @@
+{
+  "repositoryName": "mainRepository",
+  "animalMap": {
+    "1": {
+      "name": "Пушистик",
+      "birthdate": [
+        1988,
+        10,
+        4
+      ],
+      "type": "кошка",
+      "commands": [],
+      "age": {
+        "period": "P35Y8M20D",
+        "months": 8,
+        "days": 20,
+        "years": 35
+      }
+    },
+    "4": {
+      "name": "Грива",
+      "birthdate": [
+        2000,
+        5,
+        5
+      ],
+      "type": "лошадь",
+      "commands": [],
+      "age": {
+        "period": "P24Y1M19D",
+        "months": 1,
+        "days": 19,
+        "years": 24
+      }
+    },
+    "5": {
+      "name": "Химка",
+      "birthdate": [
+        2023,
+        7,
+        5
+      ],
+      "type": "хомяк",
+      "commands": [],
+      "age": {
+        "period": "P11M19D",
+        "months": 11,
+        "days": 19,
+        "years": 0
+      }
+    },
+    "6": {
+      "name": "Грива",
+      "birthdate": [
+        2000,
+        5,
+        5
+      ],
+      "type": "лошадь",
+      "commands": [],
+      "age": {
+        "period": "P24Y1M19D",
+        "months": 1,
+        "days": 19,
+        "years": 24
+      }
+    }
+  }
+}
