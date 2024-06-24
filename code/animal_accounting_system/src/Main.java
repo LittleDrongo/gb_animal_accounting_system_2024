@@ -1,10 +1,9 @@
-import Animal.Animal;
 import Animal.PackAnimals.Impl.Horse;
 import Animal.Pet.Impl.Cat;
 import Animal.Pet.Impl.Dog;
 import Animal.Pet.Impl.Hamster;
+import Repostory.Repository;
 
-import java.time.Duration;
 import java.time.LocalDate;
 
 public class Main {
@@ -15,26 +14,46 @@ public class Main {
         Hamster hamster = new Hamster("Химка", LocalDate.of(2023, 7, 5));
         Horse horse = new Horse("Грива", LocalDate.of(2000, 5, 5));
 
-        dog.setCommands("прыгать", "бегать");
-        System.out.println(dog.getCommands());
-        dog.appendCommands("смеяться");
-        System.out.println(dog.getCommands());
+        /*
+        {
+            dog.setCommands("прыгать", "бегать");
+            System.out.println(dog.getCommands());
+            dog.appendCommands("смеяться");
+            System.out.println(dog.getCommands());
 
-        dog.giveCommand("бегать");
-        dog.giveCommand("летать");
+            dog.giveCommand("бегать");
+            dog.giveCommand("летать");
 
-        cat.meow();
-        dog.bark();
-        hamster.squeak();
-        horse.moveCargo();
+            cat.meow();
+            dog.bark();
+            hamster.squeak();
+            horse.moveCargo();
 
-        System.out.println(cat.getAge());
+            System.out.println(cat.getAge());
 
 
+            System.out.println(cat);
+            System.out.println(dog);
+            System.out.println(hamster);
+        }
+         */
 
-        System.out.println(cat);
-        System.out.println(dog);
-        System.out.println(hamster);
+        System.out.println("Создание добавление");
+        Repository repository = new Repository("mainRepository");
+        repository.addAnimal(cat);
+        repository.addAnimal(dog);
+        repository.addAnimal(hamster, horse);
+        repository.printListOfAnimals();
+
+        System.out.println("После удаления 3, 2");
+        repository.removeAnimal(3, 2);
+        repository.printListOfAnimals();
+
+        System.out.println("Создание добавление второй раз");
+        repository.addAnimal(hamster, horse);
+        repository.printListOfAnimals();
+
+
 
     }
 }
