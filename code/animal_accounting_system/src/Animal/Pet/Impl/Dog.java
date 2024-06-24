@@ -1,6 +1,6 @@
 package Animal.Pet.Impl;
 
-import Animal.Pet.Interfaces.Barkable;
+import Animal.Interfaces.Barkable;
 import Animal.Pet.Pet;
 
 import java.time.LocalDate;

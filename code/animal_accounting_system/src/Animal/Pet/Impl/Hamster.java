@@ -1,6 +1,6 @@
 package Animal.Pet.Impl;
 
-import Animal.Pet.Interfaces.Squeakable;
+import Animal.Interfaces.Squeakable;
 import Animal.Pet.Pet;
 
 import java.time.LocalDate;

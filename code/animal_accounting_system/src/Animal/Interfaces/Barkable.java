@@ -1,4 +1,4 @@
-package Animal.Pet.Interfaces;
+package Animal.Interfaces;
 
 public interface Barkable {
     void bark();

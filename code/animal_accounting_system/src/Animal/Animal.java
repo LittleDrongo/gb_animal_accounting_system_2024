@@ -1,7 +1,8 @@
 package Animal;
 
+import Wrappers.Age;
+
 import java.time.LocalDate;
-import java.util.Date;
 
 public abstract class Animal {
     private String name;
@@ -19,6 +20,11 @@ public abstract class Animal {
 
     public LocalDate getBirthdate() {
         return birthdate;
+    }
+
+    public Age getAge() {
+        LocalDate now = LocalDate.now();
+        return new Age(this.birthdate, now);
     }
 
     public void setName(String name) {
@@ -44,4 +50,5 @@ public abstract class Animal {
                 + this.birthdate.getYear()
         );
     }
+
 }
