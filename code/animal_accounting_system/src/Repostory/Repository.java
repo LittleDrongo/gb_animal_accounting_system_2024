@@ -1,11 +1,20 @@
 package Repostory;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
 import Animal.Animal;
 
+import java.io.*;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Repository {
+public class Repository implements Serializable {
     private final String repositoryName;
     private final Map <Integer, Animal> animalMap = new HashMap<>();
     static private int counter = 0;
@@ -29,6 +38,11 @@ public class Repository {
 
     public Animal getAnimal(Integer id) {
         return this.animalMap.get(id);
+    }
+
+    @JsonAnyGetter
+    public Map<Integer, Animal> getAnimalMap() {
+        return animalMap;
     }
 
     public void printListOfAnimals(){

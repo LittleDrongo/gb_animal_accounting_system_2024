@@ -1,12 +1,14 @@
 package Animal;
 
+
 import Wrappers.Age;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public abstract class Animal {
+public abstract class Animal implements Serializable {
     private String name;
     private LocalDate birthdate;
     private String type;

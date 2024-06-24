@@ -3,16 +3,35 @@ import Animal.Pet.Impl.Cat;
 import Animal.Pet.Impl.Dog;
 import Animal.Pet.Impl.Hamster;
 import Repostory.Repository;
+import Utils.Files;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Cat cat = new Cat("Пушистик", LocalDate.of(1988, 10, 4));
-        Dog dog = new Dog("Тузик", LocalDate.of(2014, 9, 18));
-        Hamster hamster = new Hamster("Химка", LocalDate.of(2023, 7, 5));
-        Horse horse = new Horse("Грива", LocalDate.of(2000, 5, 5));
+
+        Repository repository = new Repository("mainRepository");
+        Cat cat = new Cat("sunny", LocalDate.of(1988, 10, 4));
+        Dog dog = new Dog("bob", LocalDate.of(2014, 9, 18));
+        Hamster hamster = new Hamster("jemmy", LocalDate.of(2023, 7, 5));
+        Horse horse = new Horse("german", LocalDate.of(2000, 5, 5));
+
+        repository.addAnimal(hamster, horse, dog, hamster, horse);
+
+        repository.printListOfAnimals();
+        Files.createDirectoryAndFile("data/myfile.json");
+
+
+    }
+
+    public static void createNew(){
+        Cat cat = new Cat("sunny", LocalDate.of(1988, 10, 4));
+        Dog dog = new Dog("bob", LocalDate.of(2014, 9, 18));
+        Hamster hamster = new Hamster("jemmy", LocalDate.of(2023, 7, 5));
+        Horse horse = new Horse("german", LocalDate.of(2000, 5, 5));
+
 
         /*
         {
@@ -39,7 +58,7 @@ public class Main {
          */
 
         System.out.println("Создание добавление");
-        Repository repository = new Repository("mainRepository");
+        Repository repository = new Repository("mainRepository"); //TODO реализовать SQL отправку
         repository.addAnimal(cat);
         repository.addAnimal(dog);
         repository.addAnimal(hamster, horse);
@@ -57,3 +76,4 @@ public class Main {
 
     }
 }
+
