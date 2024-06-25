@@ -7,10 +7,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public abstract class Animal implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String name;
     private LocalDate birthdate;
     private String type;
     private ArrayList<String> commands;
+
+
 
     public Animal() {
 
@@ -30,6 +33,10 @@ public abstract class Animal implements Serializable {
             System.out.println(this.name + " не умеет выполнять команду: " + command);
         }
 
+    }
+
+    public void appendCommands(String ...commands) {
+        Collections.addAll(this.commands, commands);
     }
 
     public String getName() {
@@ -61,7 +68,7 @@ public abstract class Animal implements Serializable {
         this.birthdate = birthdate;
     }
 
-    protected void setType(String type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -70,9 +77,11 @@ public abstract class Animal implements Serializable {
         Collections.addAll(this.commands, commands);
     }
 
-    public void appendCommands(String ...commands) {
-        Collections.addAll(this.commands, commands);
+    public void setCommands(ArrayList<String> commands) {
+        this.commands = commands;
     }
+
+
 
     @Override
     public String toString() {
