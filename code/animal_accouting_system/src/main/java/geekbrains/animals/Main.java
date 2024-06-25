@@ -8,6 +8,9 @@ import geekbrains.animals.Model.Animal.Pet.Impl.Hamster;
 import geekbrains.animals.Model.Config.Config;
 import geekbrains.animals.Model.Repostory.Repository;
 import geekbrains.animals.Model.Utils.Files;
+import geekbrains.animals.View.Cmd.Cmd;
+import geekbrains.animals.View.Cmd.Style;
+import geekbrains.animals.View.UI.Menu;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -29,6 +32,17 @@ public class Main {
 //        repository.addAnimals(cat, dog, hamster, horse);
         repository.printListOfAnimals();
 //        repository.saveToFile(Config.RepositoryFilePath);
+
+
+        Menu menu = new Menu();
+        menu.showTitle("Вы хотите выбрать купить наш товар?");
+        menu.showDescription("Для того чтобы получить много текста, нам проиходится его разбивать на различные строки, таким образом все получается", 60);
+        System.out.println();
+        menu.addPoint('1', "first point");
+        menu.addPoint('2', "second point");
+
+        menu.showMenu();
+
 
     }
 
