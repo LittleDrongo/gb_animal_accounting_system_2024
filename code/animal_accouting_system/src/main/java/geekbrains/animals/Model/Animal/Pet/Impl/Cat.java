@@ -1,5 +1,7 @@
 package geekbrains.animals.Model.Animal.Pet.Impl;
 
+import geekbrains.animals.Model.Animal.Interfaces.Barkable;
+import geekbrains.animals.Model.Animal.Interfaces.Carryable;
 import geekbrains.animals.Model.Animal.Interfaces.Meowable;
 import geekbrains.animals.Model.Animal.Pet.Pet;
 

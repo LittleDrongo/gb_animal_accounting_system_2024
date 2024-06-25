@@ -22,7 +22,7 @@ public class Menu {
         System.out.println(Style.BG_BLUE + " " + title + " " + Style.BG_RESET);
     }
 
-    public void showDescription(String text, int width){
+    public static void showDescription(String text, int width){
 
         String[] words = text.split(" ");
         StringBuilder currentLine = new StringBuilder();

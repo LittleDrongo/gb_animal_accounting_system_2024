@@ -1,5 +1,7 @@
 package geekbrains.animals.Model.Animal;
+
 import geekbrains.animals.Model.Wrappers.Age;
+import geekbrains.animals.View.Cmd.Style;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -12,7 +14,6 @@ public abstract class Animal implements Serializable {
     private LocalDate birthdate;
     private String type;
     private ArrayList<String> commands;
-
 
 
     public Animal() {
@@ -35,7 +36,7 @@ public abstract class Animal implements Serializable {
 
     }
 
-    public void appendCommands(String ...commands) {
+    public void appendCommands(String... commands) {
         Collections.addAll(this.commands, commands);
     }
 
@@ -49,6 +50,22 @@ public abstract class Animal implements Serializable {
 
     public ArrayList<String> getCommands() {
         return commands;
+    }
+
+    public void printCommands() {
+        ArrayList<String> commands = this.getCommands();
+
+        if (commands.size() > 0) {
+
+            System.out.println(this.name + " умеет выполнять следующие команды");
+            for (String command : commands) {
+                System.out.println(command);
+            }
+        } else {
+            System.out.println(Style.RED + this.name + " не умеет выполнять команды" + Style.RESET);
+        }
+
+
     }
 
     public String getType() {
@@ -72,7 +89,7 @@ public abstract class Animal implements Serializable {
         this.type = type;
     }
 
-    public void setCommands(String ...commands) {
+    public void setCommands(String... commands) {
         this.commands.clear();
         Collections.addAll(this.commands, commands);
     }
@@ -82,17 +99,16 @@ public abstract class Animal implements Serializable {
     }
 
 
-
     @Override
     public String toString() {
         return ("Вид: " + this.type + ","
                 + " кличка: " + this.name + ","
                 + " дата рождения: " +
-                + this.birthdate.getDayOfMonth() + "."
+                +this.birthdate.getDayOfMonth() + "."
                 + this.birthdate.getMonthValue() + "."
                 + this.birthdate.getYear()
                 + ","
-                + " возраст: " +this.getAge()
+                + " возраст: " + this.getAge()
         );
     }
 
