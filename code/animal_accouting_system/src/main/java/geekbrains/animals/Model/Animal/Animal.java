@@ -57,7 +57,7 @@ public abstract class Animal implements Serializable {
 
         if (commands.size() > 0) {
 
-            System.out.println(this.name + " умеет выполнять следующие команды");
+            System.out.println(Style.GREEN +this.name + " умеет выполнять следующие команды" + Style.RESET);
             for (String command : commands) {
                 System.out.println(command);
             }
@@ -108,8 +108,8 @@ public abstract class Animal implements Serializable {
                 + this.birthdate.getMonthValue() + "."
                 + this.birthdate.getYear()
                 + ","
+                + " выполняет команд: " + this.getCommands().size() + ","
                 + " возраст: " + this.getAge()
         );
     }
-
 }

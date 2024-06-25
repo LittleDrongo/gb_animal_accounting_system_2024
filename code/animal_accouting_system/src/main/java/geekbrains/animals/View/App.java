@@ -1,17 +1,63 @@
 package geekbrains.animals.View;
 
 import geekbrains.animals.Model.Animal.Animal;
+import geekbrains.animals.Model.Animal.PackAnimals.Impl.Camel;
+import geekbrains.animals.Model.Animal.PackAnimals.Impl.Donkey;
+import geekbrains.animals.Model.Animal.PackAnimals.Impl.Horse;
+import geekbrains.animals.Model.Animal.Pet.Impl.Cat;
+import geekbrains.animals.Model.Animal.Pet.Impl.Dog;
+import geekbrains.animals.Model.Animal.Pet.Impl.Hamster;
 import geekbrains.animals.Model.Config.Config;
 import geekbrains.animals.Model.Repostory.Repository;
 import geekbrains.animals.View.Cmd.Cmd;
 import geekbrains.animals.View.Cmd.Style;
 import geekbrains.animals.View.UI.Menu;
 
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+
 public class App {
     Repository repository;
+    private Map<String, Class<? extends Animal>> animalTypes;
 
     public App() {
         this.repository = Repository.loadFromFile(Config.RepositoryFilePath);
+        this.animalTypes = new HashMap<String, Class<? extends Animal>>();
+        initializeAnimalTypes();
+    }
+
+    private void initializeAnimalTypes() {
+        animalTypes.put("кошка", Cat.class);
+        animalTypes.put("собака", Dog.class);
+        animalTypes.put("хомяк", Hamster.class);
+        animalTypes.put("лошадь", Horse.class);
+        animalTypes.put("верблюд", Camel.class);
+        animalTypes.put("осёл", Donkey.class);
+    }
+
+    public void addAnimal(String animalType, String name, LocalDate birthDate) {
+        try {
+            // Получаем функцию для создания животного по типу из хэш-таблицы
+            Function<String, Animal> animalConstructor = animalTypes.get(animalType.toLowerCase());
+            if (animalConstructor == null) {
+                System.out.println("Тип животного не поддерживается: " + animalType);
+                return;
+            }
+
+
+            // Создаем экземпляр животного с помощью функции конструктора
+            Animal animal = animalConstructor.apply(name);
+
+            // Добавляем животное в репозиторий
+            repository.addAnimal(name.toLowerCase(), animal);
+
+            System.out.println("Животное добавлено: " + animalType + ", имя: " + name);
+
+        } catch (Exception e) {
+            System.out.println("Ошибка при добавлении животного: " + e.getMessage());
+        }
+
     }
 
     public void showAnimalList(){
@@ -24,7 +70,8 @@ public class App {
 
     public void showFirstMessage(){
         Menu menu = new Menu();
-        menu.showTitle("Подтвердите действие?");
+        System.out.println();
+        menu.showTitle("Главное меню");
         Menu.showDescription("Для выбора действия введите в терминал подходящий символ. Вы можете просмотреть список животных добавленных в репозиторий и так же управлять данными", 60);
         System.out.println();
         menu.addPoint('1', "Посмотреть список животных");
@@ -33,13 +80,13 @@ public class App {
         menu.addPoint('4', "Посмотреть список команд животного");
         menu.addPoint('5', "Обучить животное команде");
 
-
-
+        menu.addPoint(' ', "");
         menu.addPoint('8', "Показать меню еще раз.");
         menu.addPoint('9', "Сохранить изменения и выйти.");
         menu.addPoint('0', "Выйти, без сохранения");
 
         menu.showMenu();
+        System.out.println();
     }
 
     public void start(){
@@ -64,6 +111,8 @@ public class App {
                 }
                 case '2': {
                     System.out.println(2);
+
+
                     flag = true;
                     break;
                 }

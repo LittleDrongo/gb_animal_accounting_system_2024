@@ -8,7 +8,5 @@ public class Main {
 
         App app = new App();
         app.start();
-//        Screens.startMenu();
-//        app.showAnimalList();
     }
 }
