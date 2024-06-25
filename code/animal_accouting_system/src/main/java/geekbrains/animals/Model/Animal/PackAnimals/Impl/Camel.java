@@ -1,8 +1,8 @@
-package geekbrains.animals.Animal.PackAnimals.Impl;
+package geekbrains.animals.Model.Animal.PackAnimals.Impl;
 
 
-import geekbrains.animals.Animal.Interfaces.Carryable;
-import geekbrains.animals.Animal.PackAnimals.PackAnimals;
+import geekbrains.animals.Model.Animal.Interfaces.Carryable;
+import geekbrains.animals.Model.Animal.PackAnimals.PackAnimals;
 
 import java.time.LocalDate;
 

@@ -1,7 +1,7 @@
-package geekbrains.animals.Animal.PackAnimals;
+package geekbrains.animals.Model.Animal.PackAnimals;
 
 
-import geekbrains.animals.Animal.Animal;
+import geekbrains.animals.Model.Animal.Animal;
 
 import java.time.LocalDate;
 

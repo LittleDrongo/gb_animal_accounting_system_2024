@@ -1,4 +1,4 @@
-package geekbrains.animals.Config;
+package geekbrains.animals.Model.Config;
 
 public class Config {
 

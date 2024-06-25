@@ -1,4 +1,4 @@
-package geekbrains.animals.Wrappers;
+package geekbrains.animals.Model.Wrappers;
 
 import java.time.LocalDate;
 import java.time.Period;

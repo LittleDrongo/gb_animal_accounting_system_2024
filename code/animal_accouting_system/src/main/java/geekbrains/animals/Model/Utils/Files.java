@@ -1,4 +1,4 @@
-package geekbrains.animals.Utils;
+package geekbrains.animals.Model.Utils;
 
 import java.io.File;
 import java.io.IOException;

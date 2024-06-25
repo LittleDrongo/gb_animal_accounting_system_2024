@@ -1,7 +1,7 @@
-package geekbrains.animals.Animal.Pet.Impl;
+package geekbrains.animals.Model.Animal.Pet.Impl;
 
-import geekbrains.animals.Animal.Interfaces.Meowable;
-import geekbrains.animals.Animal.Pet.Pet;
+import geekbrains.animals.Model.Animal.Interfaces.Meowable;
+import geekbrains.animals.Model.Animal.Pet.Pet;
 
 import java.time.LocalDate;
 

@@ -1,9 +1,9 @@
-package geekbrains.animals.Repostory;
+package geekbrains.animals.Model.Repostory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-import geekbrains.animals.Animal.Animal;
+import geekbrains.animals.Model.Animal.Animal;
 
 import java.io.*;
 import java.util.HashMap;

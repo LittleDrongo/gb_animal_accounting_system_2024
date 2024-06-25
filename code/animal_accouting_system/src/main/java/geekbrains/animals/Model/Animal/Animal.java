@@ -1,5 +1,5 @@
-package geekbrains.animals.Animal;
-import geekbrains.animals.Wrappers.Age;
+package geekbrains.animals.Model.Animal;
+import geekbrains.animals.Model.Wrappers.Age;
 
 import java.io.Serializable;
 import java.time.LocalDate;
