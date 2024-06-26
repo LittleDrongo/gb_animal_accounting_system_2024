@@ -14,6 +14,8 @@ import geekbrains.animals.View.Cmd.Style;
 import geekbrains.animals.View.UI.Menu;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -111,11 +113,23 @@ public class App {
                     break;
                 }
                 case '2': {
+                    Menu.showDescription("кошка, собака, хомяк, лошадь, верблюд, осёл", 100);
                     String animalType = Cmd.input("Введите тип животного:");
                     String animalName = Cmd.input("Введите имя животного:");
-                    this.addAnimal(animalType, animalName, LocalDate.now());
-                    waitAnswer();
+                    Menu.showDescription("В формате дд.мм.ггг (26.06.2024)", 100);
+                    String animalBirthDate = Cmd.input("Введите дату рождения:");
 
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+
+                    try {
+                        LocalDate date = LocalDate.parse(animalBirthDate, formatter);
+                        this.addAnimal(animalType, animalName, date);
+                        System.out.println("Преобразованная дата: " + date);
+                    } catch (DateTimeParseException e) {
+                        System.out.println("Ошибка при преобразовании даты: " + e.getMessage());
+                    }
+
+                    waitAnswer();
 
 
                     flag = true;
@@ -172,9 +186,42 @@ public class App {
                     break;
                 }
                 case '0': {
-                    System.out.println(0);
-                    flag = true;
-                    break;
+                    Menu menu = new Menu();
+                    System.out.println();
+                    System.out.println(Style.BG_RED + " Вы точно хотите завершить работу? " + Style.BG_RESET);
+                    Menu.showDescription("Будьте внимательны, все внесенные изменения будут утрачены и не будут сохранены. Если вы передумали нажмите Отмена", 80);
+                    menu.addPoint('1', "Нет, отмена!");
+                    menu.addPoint('2', "Да.");
+                    System.out.println();
+                    menu.showMenu();
+                    System.out.println();
+
+                    boolean flagTwo = false;
+                    while (!flagTwo) {
+
+                        char selectTwo = Cmd.readChar(Style.BG_RED, " Завершить работу? ", Style.BG_RESET, " ");
+
+                        switch (selectTwo) {
+                            case '1': {
+                                flag = true;
+                                waitAnswer();
+                                break;
+                            }
+                            case '2': {
+                                System.out.println();
+                                System.exit(0);
+                                flag = true;
+                                break;
+                            }
+                            default: {
+                                System.out.println(Style.BG_RED + "Не верная команда" + Style.BG_RESET);
+                                System.out.println("Повторите выбор");
+                                break;
+                            }
+                        }
+
+
+                    }
                 }
                 default: {
                     System.out.println(Style.BG_RED + "Не верная команда" + Style.BG_RESET);
