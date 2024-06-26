@@ -13,6 +13,9 @@ public abstract class Animal implements Serializable {
     private String name;
     private LocalDate birthdate;
     private String type;
+
+
+
     private ArrayList<String> commands;
 
 

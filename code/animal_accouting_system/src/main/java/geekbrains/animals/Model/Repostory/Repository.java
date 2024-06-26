@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import geekbrains.animals.Model.Animal.Animal;
+import geekbrains.animals.Model.Animal.PackAnimals.PackAnimals;
+import geekbrains.animals.Model.Animal.Pet.Pet;
 
 import java.io.*;
 import java.util.HashMap;
@@ -34,8 +36,35 @@ public class Repository implements Serializable {
         }
     }
 
+    public int countPetsAnimals() {
+
+        int count = 0;
+        for (Animal animal : this.animalMap.values()) {
+            if (animal instanceof Pet) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int countPackAnimals() {
+        int count = 0;
+        for (Animal animal : this.animalMap.values()) {
+            if (animal instanceof PackAnimals) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public Animal getAnimal(Integer id) {
         return this.animalMap.get(id);
+    }
+    public void printCounters() {
+        System.out.println("Данные из репозитория");
+        System.out.println("Домашних животных:" + countPetsAnimals());
+        System.out.println("Вьючных животных:" + countPackAnimals());
+        System.out.println("Всего:" + (countPackAnimals() + countPetsAnimals()));
     }
 
     public Map<Integer, Animal> getAnimalMap() {

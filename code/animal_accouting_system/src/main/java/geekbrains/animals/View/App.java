@@ -82,6 +82,7 @@ public class App {
         menu.addPoint('3', "Удалить животное");
         menu.addPoint('4', "Посмотреть список команд животного");
         menu.addPoint('5', "Обучить животное команде");
+        menu.addPoint('6', "Показать счётчики репозитория");
 
         menu.addPoint(' ', "");
         menu.addPoint('9', "Сохранить изменения и выйти.");
@@ -179,6 +180,11 @@ public class App {
                         System.out.println("Ошибка ввода");
                         waitAnswer();
                     }
+                }
+                case '6': {
+                    this.repository.printCounters();
+                    flag = true;
+                    break;
                 }
                 case '9': {
                     this.repository.saveToFile(Config.RepositoryFilePath);
