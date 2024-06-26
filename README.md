@@ -4,4 +4,5 @@
 <br>
 В качестве модуля управления выступает терминальный ввод и вывод.
 
-![1 шаг](https://github.com/LittleDrongo/gb_OOP_224/blob/main/02-Seminars/Seminar07/ComplexCalculator/gifs/how_to_1.gif "Шаг 1")
+![1 шаг](https://github.com/LittleDrongo/gb_animal_accounting_system_2024/blob/main/docs/terminal.gif "Шаг 1")
+
