@@ -1,4 +1,4 @@
-package geekbrains.animals.View.Cmd;
+package geekbrains.animals.view.Cmd;
 
 import java.io.BufferedReader;
 import java.io.IOException;

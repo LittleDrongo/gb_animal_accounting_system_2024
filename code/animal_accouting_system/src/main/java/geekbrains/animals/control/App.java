@@ -1,4 +1,4 @@
-package geekbrains.animals.View;
+package geekbrains.animals.control;
 
 import geekbrains.animals.Model.Animal.Animal;
 import geekbrains.animals.Model.Animal.PackAnimals.Impl.Camel;
@@ -9,9 +9,9 @@ import geekbrains.animals.Model.Animal.Pet.Impl.Dog;
 import geekbrains.animals.Model.Animal.Pet.Impl.Hamster;
 import geekbrains.animals.Model.Config.Config;
 import geekbrains.animals.Model.Repostory.Repository;
-import geekbrains.animals.View.Cmd.Cmd;
-import geekbrains.animals.View.Cmd.Style;
-import geekbrains.animals.View.UI.Menu;
+import geekbrains.animals.view.Cmd.Cmd;
+import geekbrains.animals.view.Cmd.Style;
+import geekbrains.animals.view.UI.Menu;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -41,18 +41,15 @@ public class App {
 
     public void addAnimal(String animalType, String name, LocalDate birthDate) {
         try {
-            // Проверяем, поддерживается ли тип животного
             Function<String, Animal> animalConstructor = animalTypes.get(animalType.toLowerCase());
             if (animalConstructor == null) {
                 System.out.println("Тип животного не поддерживается: " + animalType);
                 return;
             }
 
-            // Создаем экземпляр животного с указанным именем и датой рождения
             Animal animal = animalConstructor.apply(name);
-            animal.setBirthdate(birthDate); // Устанавливаем дату рождения
+            animal.setBirthdate(birthDate);
 
-            // Добавляем животное в репозиторий
             repository.addAnimals(animal);
 
             System.out.println("Животное добавлено: " + animalType + ", имя: " + name);
@@ -64,10 +61,6 @@ public class App {
     }
 
     public void showAnimalList() {
-        this.repository.printListOfAnimals();
-    }
-
-    public void removeAnimal(int... AnimalsID) {
         this.repository.printListOfAnimals();
     }
 

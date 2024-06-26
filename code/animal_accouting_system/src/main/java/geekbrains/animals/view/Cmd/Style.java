@@ -1,4 +1,4 @@
-package geekbrains.animals.View.Cmd;
+package geekbrains.animals.view.Cmd;
 
 public class Style {
     public static final String RESET = "\033[0m";

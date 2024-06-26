@@ -1,6 +1,6 @@
-package geekbrains.animals.View.UI;
+package geekbrains.animals.view.UI;
 
-import geekbrains.animals.View.Cmd.Style;
+import geekbrains.animals.view.Cmd.Style;
 
 import java.util.ArrayList;
 

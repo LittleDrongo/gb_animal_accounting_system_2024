@@ -1,7 +1,7 @@
 package geekbrains.animals.Model.Animal;
 
 import geekbrains.animals.Model.Wrappers.Age;
-import geekbrains.animals.View.Cmd.Style;
+import geekbrains.animals.view.Cmd.Style;
 
 import java.io.Serializable;
 import java.time.LocalDate;
