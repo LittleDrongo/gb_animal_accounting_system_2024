@@ -110,7 +110,7 @@ public class App {
                     Menu.showDescription("кошка, собака, хомяк, лошадь, верблюд, осёл", 100);
                     String animalType = Cmd.input("Введите тип животного:");
                     String animalName = Cmd.input("Введите имя животного:");
-                    Menu.showDescription("В формате дд.мм.ггг (26.06.2024)", 100);
+                    Menu.showDescription("В формате дд.мм.гггг (26.06.2024)", 100);
                     String animalBirthDate = Cmd.input("Введите дату рождения:");
 
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
